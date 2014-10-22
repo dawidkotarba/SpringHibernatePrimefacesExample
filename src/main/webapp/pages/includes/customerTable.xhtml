@@ -1,0 +1,28 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+	<p:growl id="custTableGrowl" sticky="false"/>
+	
+	<p:dataTable id="customerTable" var="customer"
+		value="#{customerBean.customerList}" paginator="true" rows="5">
+
+		<p:column headerText="Id">
+			<h:outputText value="#{customer.id}" />
+		</p:column>
+
+		<p:column headerText="Name">
+			<h:outputText value="#{customer.name}" />
+		</p:column>
+
+		<p:column headerText="Surname">
+			<h:outputText value="#{customer.surname}" />
+		</p:column>
+	</p:dataTable>
+	<br />
+	<p:commandButton actionListener="#{customerBean.populateCustomers()}"
+		update="customerTable custTableGrowl" value="#{msg['btn.refresh']}" />
+
+</ui:composition>

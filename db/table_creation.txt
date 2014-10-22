@@ -1,0 +1,21 @@
+CREATE TABLE shop."CUSTOMER"
+(
+   id integer NOT NULL, 
+   name character varying NOT NULL, 
+   surname character varying NOT NULL, 
+   PRIMARY KEY (id)
+) 
+WITH (
+  OIDS = FALSE
+)
+;
+
+SELECT id, name, surname
+  FROM shop."CUSTOMER";
+
+INSERT INTO shop."CUSTOMER"(
+            id, name, surname)
+    VALUES (1, 'test1', 'test1');
+
+DELETE FROM shop."CUSTOMER"
+ WHERE id is not null;

@@ -1,0 +1,28 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+	<p:growl id="addCustomerGrowl" sticky="false" />
+
+	<p:fieldset toggleable="true" toggleSpeed="500" legend="#{msg['label.enter.details']}">
+
+		<h:panelGrid columns="2" styleClass="center-align">
+
+			<p:outputLabel value="Id:" />
+			<p:inputText value="#{customerBean.customer.id}" />
+
+			<p:outputLabel value="Name:" />
+			<p:inputText value="#{customerBean.customer.name}" />
+
+			<p:outputLabel value="Surname:" />
+			<p:inputText value="#{customerBean.customer.surname}" />
+			<br />
+			<p:commandButton actionListener="#{customerBean.addCustomer()}"
+				update="customerTable addCustomerGrowl" value="#{msg['btn.add']}" />
+
+		</h:panelGrid>
+	</p:fieldset>
+
+</ui:composition>

@@ -1,0 +1,8 @@
+DB: PostgreSQL (http://www.pgadmin.org/)
+Database: shop
+Schema: shop
+URL: jdbc:postgresql://localhost:5432/shop
+username: postgres
+password: admin
+
+Tabela: CUSTOMER

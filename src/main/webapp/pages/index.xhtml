@@ -1,0 +1,27 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+<h:head>
+	<title>#{msg['app.title']}</title>
+</h:head>
+<h:body>
+	<h:outputStylesheet library="css" name="styles.css" />
+
+	<h:form styleClass="center-align" style="width: 60%" id="mainForm">
+		<p:panel header="#{msg['app.title']}" toggleable="true" closable="true" toggleSpeed="500" closeSpeed="500">
+			<p:tabView>
+				<p:tab title="#{msg['tab.add.customer']}">
+					<ui:include src="includes/addCustomer.xhtml" />
+				</p:tab>
+
+				<p:tab title="#{msg['tab.show.customers']}">
+					<ui:include src="includes/customerTable.xhtml" />
+				</p:tab>
+
+			</p:tabView>
+		</p:panel>
+	</h:form>
+</h:body>
+</html>
