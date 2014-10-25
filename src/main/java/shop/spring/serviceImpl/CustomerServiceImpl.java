@@ -14,13 +14,14 @@ import org.springframework.transaction.annotation.Transactional;
 import shop.spring.daoImpl.CustomerDaoImpl;
 import shop.spring.entities.Customer;
 
-@Service("customerService")
+@Service
 @Transactional(readOnly = true)
 public class CustomerServiceImpl implements CustomerService {
 
 	@Autowired
 	private CustomerDaoImpl CustomerDao;
 
+	@Override
 	@Transactional(readOnly = false)
 	public void addCustomer(CustomerVo customerVo) {
 
@@ -29,6 +30,7 @@ public class CustomerServiceImpl implements CustomerService {
 		getCustomerDao().addCustomer(customer);
 	}
 
+	@Override
 	@Transactional(readOnly = false)
 	public void deleteCustomer(CustomerVo customerVo) {
 		Customer customer = new Customer();
@@ -36,6 +38,7 @@ public class CustomerServiceImpl implements CustomerService {
 		getCustomerDao().deleteCustomer(customer);
 	}
 
+	@Override
 	@Transactional(readOnly = false)
 	public void updateCustomer(CustomerVo customerVo) {
 		Customer customer = new Customer();
@@ -43,6 +46,7 @@ public class CustomerServiceImpl implements CustomerService {
 		getCustomerDao().updateCustomer(customer);
 	}
 
+	@Override
 	public CustomerVo getCustomerById(int id) {
 		Customer customer = getCustomerDao().getCustomerById(id);
 		CustomerVo customerVo = new CustomerVo();
@@ -50,6 +54,7 @@ public class CustomerServiceImpl implements CustomerService {
 		return customerVo;
 	}
 
+	@Override
 	public List<CustomerVo> getCustomers() {
 		List<Customer> customerList = getCustomerDao().getCustomers();
 
@@ -65,6 +70,7 @@ public class CustomerServiceImpl implements CustomerService {
 
 	}
 
+	@Override
 	public CustomerDaoImpl getCustomerDao() {
 		return CustomerDao;
 	}

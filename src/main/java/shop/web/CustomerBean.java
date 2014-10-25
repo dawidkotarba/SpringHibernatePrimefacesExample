@@ -6,24 +6,25 @@ import java.util.List;
 
 import javax.annotation.PostConstruct;
 import javax.faces.application.FacesMessage;
-import javax.faces.bean.ManagedBean;
-import javax.faces.bean.ManagedProperty;
-import javax.faces.bean.ViewScoped;
 import javax.faces.context.FacesContext;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Scope;
 import org.springframework.dao.DataAccessException;
+import org.springframework.stereotype.Component;
 
+import shop.spring.service.CustomerService;
 import shop.spring.serviceImpl.CustomerServiceImpl;
 import shop.spring.vo.CustomerVo;
 
-@ManagedBean
-@ViewScoped
+@Component
+@Scope("session")
 public class CustomerBean implements Serializable {
 
 	private static final long serialVersionUID = -2050042525534142020L;
 
-	@ManagedProperty(value = "#{customerService}")
-	private CustomerServiceImpl customerService;
+	@Autowired
+	private CustomerService customerService;
 
 	private CustomerVo customer;
 	private List<CustomerVo> customerList;
@@ -78,7 +79,7 @@ public class CustomerBean implements Serializable {
 		return getCustomerList();		
 	}
 
-	public CustomerServiceImpl getCustomerService() {
+	public CustomerService getCustomerService() {
 		return customerService;
 	}
 
