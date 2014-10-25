@@ -10,6 +10,7 @@ import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 import javax.inject.Named;
 
+import org.apache.log4j.Logger;
 import org.springframework.context.annotation.Scope;
 import org.springframework.dao.DataAccessException;
 
@@ -22,6 +23,7 @@ import shop.spring.vo.CustomerVo;
 public class CustomerBean implements Serializable {
 
 	private static final long serialVersionUID = -2050042525534142020L;
+	private static final Logger logger = Logger.getLogger(CustomerBean.class);
 
 	@Inject
 	private CustomerService customerService;
@@ -31,6 +33,7 @@ public class CustomerBean implements Serializable {
 
 	@PostConstruct
 	private void init() {
+		logger.info("Customer Bean initialized");
 		customer = new CustomerVo();
 	}
 
