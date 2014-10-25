@@ -2,7 +2,7 @@ package shop.spring.service;
 
 import java.util.List;
 
-import shop.spring.daoImpl.CustomerDaoImpl;
+import shop.spring.dao.CustomerDao;
 import shop.spring.vo.CustomerVo;
 
 public interface CustomerService {
@@ -17,6 +17,6 @@ public interface CustomerService {
 
 	List<CustomerVo> getCustomers();
 
-	CustomerDaoImpl getCustomerDao();
+	CustomerDao getCustomerDao();
 
 }

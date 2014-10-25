@@ -9,17 +9,17 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import shop.spring.daoImpl.CustomerDaoImpl;
 import shop.spring.entities.Customer;
 import shop.spring.service.CustomerService;
 import shop.spring.vo.CustomerVo;
+import shop.spring.dao.CustomerDao;
 
 @Service
 @Transactional(readOnly = true)
 public class CustomerServiceImpl implements CustomerService {
 
 	@Inject
-	private CustomerDaoImpl CustomerDao;
+	private CustomerDao CustomerDao;
 
 	@Override
 	@Transactional(readOnly = false)
@@ -71,11 +71,11 @@ public class CustomerServiceImpl implements CustomerService {
 	}
 
 	@Override
-	public CustomerDaoImpl getCustomerDao() {
+	public CustomerDao getCustomerDao() {
 		return CustomerDao;
 	}
 
-	public void setCustomerDao(CustomerDaoImpl CustomerDao) {
+	public void setCustomerDao(CustomerDao CustomerDao) {
 		this.CustomerDao = CustomerDao;
 	}
 }
