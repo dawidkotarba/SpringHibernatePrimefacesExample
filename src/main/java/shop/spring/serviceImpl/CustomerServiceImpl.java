@@ -3,22 +3,22 @@ package shop.spring.serviceImpl;
 import java.util.ArrayList;
 import java.util.List;
 
-import shop.spring.service.CustomerService;
-import shop.spring.vo.CustomerVo;
+import javax.inject.Inject;
 
 import org.springframework.beans.BeanUtils;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import shop.spring.daoImpl.CustomerDaoImpl;
 import shop.spring.entities.Customer;
+import shop.spring.service.CustomerService;
+import shop.spring.vo.CustomerVo;
 
 @Service
 @Transactional(readOnly = true)
 public class CustomerServiceImpl implements CustomerService {
 
-	@Autowired
+	@Inject
 	private CustomerDaoImpl CustomerDao;
 
 	@Override

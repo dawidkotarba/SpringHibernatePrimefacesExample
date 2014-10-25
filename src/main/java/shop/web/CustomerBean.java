@@ -7,23 +7,23 @@ import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
+import javax.inject.Inject;
+import javax.inject.Named;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.dao.DataAccessException;
-import org.springframework.stereotype.Component;
 
 import shop.spring.service.CustomerService;
 import shop.spring.serviceImpl.CustomerServiceImpl;
 import shop.spring.vo.CustomerVo;
 
-@Component
+@Named
 @Scope("session")
 public class CustomerBean implements Serializable {
 
 	private static final long serialVersionUID = -2050042525534142020L;
 
-	@Autowired
+	@Inject
 	private CustomerService customerService;
 
 	private CustomerVo customer;

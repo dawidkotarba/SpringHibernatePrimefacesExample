@@ -1,8 +1,9 @@
 package shop.spring.daoImpl;
 
+import javax.inject.Inject;
+
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import shop.spring.dao.BaseDao;
@@ -10,7 +11,7 @@ import shop.spring.dao.BaseDao;
 @Repository
 public class BaseDaoImpl implements BaseDao {
 
-	@Autowired
+	@Inject
 	protected SessionFactory sessionFactory;
 
 	@Override
