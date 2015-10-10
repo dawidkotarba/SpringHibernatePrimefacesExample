@@ -22,7 +22,6 @@ public class CustomerServiceImpl implements CustomerService {
 	private CustomerDao CustomerDao;
 
 	@Override
-	@Transactional(readOnly = false)
 	public void addCustomer(CustomerVo customerVo) {
 
 		Customer customer = new Customer();
@@ -31,7 +30,6 @@ public class CustomerServiceImpl implements CustomerService {
 	}
 
 	@Override
-	@Transactional(readOnly = false)
 	public void deleteCustomer(CustomerVo customerVo) {
 		Customer customer = new Customer();
 		BeanUtils.copyProperties(customerVo, customer);
@@ -39,7 +37,6 @@ public class CustomerServiceImpl implements CustomerService {
 	}
 
 	@Override
-	@Transactional(readOnly = false)
 	public void updateCustomer(CustomerVo customerVo) {
 		Customer customer = new Customer();
 		BeanUtils.copyProperties(customerVo, customer);
