@@ -1,2 +1,1 @@
-Example of integration between JPA(Hibernate), EJB and JSF(Richfaces).
-Author: Dawid Kotarba
+Simple Example of integration between Hibernate, Spring and JSF (Richfaces).
