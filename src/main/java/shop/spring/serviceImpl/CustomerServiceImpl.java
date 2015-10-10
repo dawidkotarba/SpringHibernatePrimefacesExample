@@ -15,7 +15,7 @@ import shop.spring.vo.CustomerVo;
 import shop.spring.dao.CustomerDao;
 
 @Service
-@Transactional(readOnly = true)
+@Transactional
 public class CustomerServiceImpl implements CustomerService {
 
 	@Inject
